@@ -1,7 +1,7 @@
 {
 	"name": "commitlint-bot",
 	"version": "1.0.0",
-	"description": "A GitHub Apps that runs commitlint for you",
+	"description": "A GitHub App that runs commitlint for you",
 	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com> (https://commitlint.now.sh)",
 	"license": "MIT",
 	"repository": "https://github.com/ahmed-taj/commitlint-bot.git",
