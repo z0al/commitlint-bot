@@ -26,6 +26,10 @@ See [docs/deploy.md](docs/deploy.md) if you would like to run your own instance 
 
 Robot designed by [Freepik](https://www.freepik.com/free-vector/fun-pack-of-robots-avatars_1258314.htm).
 
+## Like it?
+
+Give it a star(:star:) :point_up_2:
+
 ## License
 
-Released under the [MIT license](./LICENSE).
+MIT © [Ahmed T. Ali](https://github.com/ahmed-taj)
