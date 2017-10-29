@@ -5,13 +5,14 @@
 	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com> (https://commitlint.now.sh)",
 	"license": "MIT",
 	"repository": "https://github.com/ahmed-taj/commitlint-bot.git",
+	"keywords": ["validate", "commit", "pr", "conventional", "git", "probot-app"],
 	"scripts": {
 		"start": "probot run ./index.js",
 		"test": "mocha && standard"
 	},
 	"dependencies": {
 		"commitlint": "^4.2.2",
-		"probot": "^2.0.0"
+		"probot": "^3.0.0"
 	},
 	"devDependencies": {
 		"expect": "^1.20.2",
