@@ -1,0 +1,26 @@
+{
+	"name": "commitlint-bot",
+	"version": "1.0.0",
+	"description": "A GitHub Apps that runs commitlint for you",
+	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com> (https://commitlint.now.sh)",
+	"license": "MIT",
+	"repository": "https://github.com/ahmed-taj/commitlint-bot.git",
+	"scripts": {
+		"start": "probot run ./index.js",
+		"test": "mocha && standard"
+	},
+	"dependencies": {
+		"commitlint": "^4.2.2",
+		"probot": "^2.0.0"
+	},
+	"devDependencies": {
+		"expect": "^1.20.2",
+		"localtunnel": "^1.8.2",
+		"mocha": "^3.2.0",
+		"standard": "^10.0.3"
+	},
+	"engines": {
+		"node": ">= 8.8.0",
+		"npm": ">= 5.4.0"
+	}
+}
