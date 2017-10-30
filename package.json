@@ -8,7 +8,7 @@
 	"keywords": ["validate", "commit", "pr", "conventional", "git", "probot-app"],
 	"scripts": {
 		"start": "probot run ./index.js",
-		"test": "mocha && standard"
+		"test": "mocha"
 	},
 	"dependencies": {
 		"@commitlint/config-angular": "^4.2.1",
