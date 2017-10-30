@@ -3,10 +3,10 @@
 	"alias": ["commitlint"],
 	"type": "npm",
 	"env": {
-		"APP_ID": "@APP_ID",
+		"APP_ID": "@commitlint_bot_app_id",
 		"NODE_ENV": "production",
-		"PRIVATE_KEY": "@PRIVATE_KEY",
-		"WEBHOOK_SECRET": "@WEBHOOK_SECRET"
+		"PRIVATE_KEY": "@commitlint_bot_private_key",
+		"WEBHOOK_SECRET": "@commitlint_bot_webhook_secret"
 	},
 	"engines": {
 		"node": ">=8.8.0"
