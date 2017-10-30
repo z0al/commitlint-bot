@@ -27,6 +27,12 @@ For best results, enable branch protection (in the repository's settings) and re
 [status-check-screenshot]: docs/status.png
 [branch-protection-screenshot]: docs/setting.png
 
+## Todo
+
+- [ ] Add tests
+- [ ] Support `.commitlintrc.json` and `.commitlintrc.yml` files
+- [ ] Add here ? open an [issue](https://github.com/ahmed-taj/commitlint-bot/issues/new)
+
 ## Development
 
 1. Setup the repo:
