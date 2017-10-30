@@ -1,10 +1,9 @@
-module.exports = (robot) => {
-  // Your code here
-  console.log('Yay, the app was loaded!')
+// Ours
+const commitlint = require('./lib/lint')
 
-  // For more information on building apps:
-  // https://probot.github.io/docs/
-
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
+module.exports = robot => {
+	// For more information on building apps:
+	// https://probot.github.io/docs/
+	robot.on('pull_request.opened', commitlint)
+	robot.on('pull_request.edited', commitlint)
 }
