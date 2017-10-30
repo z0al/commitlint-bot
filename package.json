@@ -19,6 +19,7 @@
 		"expect": "^1.20.2",
 		"localtunnel": "^1.8.2",
 		"mocha": "^3.2.0",
+		"now": "^8.3.10",
 		"standard": "^10.0.3"
 	},
 	"engines": {

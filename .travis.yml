@@ -1,6 +1,8 @@
 sudo: false
 language: node_js
 node_js:
-  - "7.7.1"
+  - "8"
 notifications:
   disabled: true
+after_success:
+  - npm run now -- --token=$NOW_TOKEN

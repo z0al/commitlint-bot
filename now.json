@@ -1,0 +1,11 @@
+{
+	"name": "commitlint-bot",
+	"alias": ["commitlint"],
+	"type": "npm",
+	"env": {
+		"NODE_ENV": "production"
+	},
+	"engines": {
+		"node": ">=8.8.0"
+	}
+}
