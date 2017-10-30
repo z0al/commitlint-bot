@@ -1,8 +1,16 @@
 sudo: false
 language: node_js
+cache:
+  directories:
+    - node_modules
 node_js:
   - "8"
 notifications:
-  disabled: true
-after_success:
-  - npm run now -- --token=$NOW_TOKEN
+  email: false
+
+deploy:
+  script: scripts/deploy.sh
+  provider: script
+  skip_cleanup: true
+  on:
+    branch: master
