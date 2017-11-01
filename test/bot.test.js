@@ -5,7 +5,16 @@ const { createRobot } = require('probot')
 // Ours
 const app = require('../index')
 const githubMock = require('./mocks/github')
-const payload = require('./payload')
+const events = require('./events')
+
+// Constants
+const baseStatus = {
+	sha: '123456789',
+	repo: 'test-commitlint-bot',
+	owner: 'ahmed-taj',
+	context: 'commitlint-bot',
+	target_url: 'http://npm.im/@commitlint/config-angular#problems'
+}
 
 describe('commitlint-bot', () => {
 	let robot
@@ -24,10 +33,18 @@ describe('commitlint-bot', () => {
 
 	describe('update status to pending', () => {
 		it('calls createStatus with "pending"', async () => {
+			const pending = {
+				...baseStatus,
+				state: 'pending',
+				description: 'Waiting for the status to be reported'
+			}
 			// Simulates delivery of a payload
-			await robot.receive(payload.opened)
-			// expect(github.repos.createStatus).toHaveBeenCalled()
-			expect(true).toBeTruthy()
+			// New PR
+			await robot.receive(events.opened)
+			expect(github.repos.createStatus).toHaveBeenCalledWith(pending)
+			// Updated PR
+			await robot.receive(events.synchronize)
+			expect(github.repos.createStatus).toHaveBeenCalledWith(pending)
 		})
 	})
 })
