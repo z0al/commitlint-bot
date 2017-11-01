@@ -2,7 +2,7 @@
 	"name": "commitlint-bot",
 	"version": "1.0.0",
 	"description": "A GitHub App that runs commitlint for you",
-	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com> (https://commitlint.now.sh)",
+	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com> (https://ahmed.sd)",
 	"license": "MIT",
 	"repository": "https://github.com/ahmed-taj/commitlint-bot.git",
 	"keywords": ["validate", "commit", "pr", "conventional", "git", "probot-app"],
