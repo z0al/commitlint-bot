@@ -62,25 +62,4 @@ describe('commitlint-bot', () => {
 			expect(github.pullRequests.getCommits).toHaveBeenCalledWith(info)
 		})
 	})
-
-	describe('sends success when messages are valid', () => {
-		const success = {
-			...baseStatus,
-			state: 'success',
-			// description: 'found 0 problems, 0 warnings'
-			description: 'ok'
-		}
-
-		it('works with new PRs', async () => {
-			// Prepare
-			// github = githubMock(['fix: me'])
-			// robot.auth = () => Promise.resolve(github)
-			await robot.receive(events.opened)
-			expect(github.repos.createStatus).toHaveBeenCalledWith(success)
-		})
-		it('works with updated PRs', async () => {
-			await robot.receive(events.synchronize)
-			expect(github.repos.createStatus).toHaveBeenCalledWith(success)
-		})
-	})
 })
