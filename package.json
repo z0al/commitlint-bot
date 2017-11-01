@@ -8,6 +8,7 @@
 	"keywords": ["validate", "commit", "pr", "conventional", "git", "probot-app"],
 	"scripts": {
 		"now": "now",
+		"now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY | base64 -d) npm start",
 		"start": "probot run ./index.js",
 		"test": "mocha"
 	},
