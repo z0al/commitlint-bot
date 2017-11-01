@@ -10,8 +10,8 @@ const events = require('./events')
 // Constants
 const baseStatus = {
 	sha: '123456789',
-	repo: 'test-commitlint-bot',
-	owner: 'ahmed-taj',
+	repo: 'repo',
+	owner: 'user',
 	context: 'commitlint-bot',
 	target_url: 'http://npm.im/@commitlint/config-angular#problems'
 }
@@ -31,20 +31,56 @@ describe('commitlint-bot', () => {
 		robot.auth = () => Promise.resolve(github)
 	})
 
-	describe('update status to pending', () => {
-		it('calls createStatus with "pending"', async () => {
-			const pending = {
-				...baseStatus,
-				state: 'pending',
-				description: 'Waiting for the status to be reported'
-			}
-			// Simulates delivery of a payload
-			// New PR
+	describe('updates status to pending', () => {
+		const pending = {
+			...baseStatus,
+			state: 'pending',
+			description: 'Waiting for the status to be reported'
+		}
+
+		it('works with new PRs', async () => {
 			await robot.receive(events.opened)
 			expect(github.repos.createStatus).toHaveBeenCalledWith(pending)
-			// Updated PR
+		})
+
+		it('works with updated PRs', async () => {
 			await robot.receive(events.synchronize)
 			expect(github.repos.createStatus).toHaveBeenCalledWith(pending)
+		})
+	})
+
+	describe('gets the list of commits for PRs', () => {
+		const info = { repo: 'repo', owner: 'user', number: 1 }
+
+		it('works with new PRs', async () => {
+			await robot.receive(events.opened)
+			expect(github.pullRequests.getCommits).toHaveBeenCalledWith(info)
+		})
+
+		it('works with updated PRs', async () => {
+			await robot.receive(events.synchronize)
+			expect(github.pullRequests.getCommits).toHaveBeenCalledWith(info)
+		})
+	})
+
+	describe('sends success when messages are valid', () => {
+		const success = {
+			...baseStatus,
+			state: 'success',
+			// description: 'found 0 problems, 0 warnings'
+			description: 'ok'
+		}
+
+		it('works with new PRs', async () => {
+			// Prepare
+			// github = githubMock(['fix: me'])
+			// robot.auth = () => Promise.resolve(github)
+			await robot.receive(events.opened)
+			expect(github.repos.createStatus).toHaveBeenCalledWith(success)
+		})
+		it('works with updated PRs', async () => {
+			await robot.receive(events.synchronize)
+			expect(github.repos.createStatus).toHaveBeenCalledWith(success)
 		})
 	})
 })

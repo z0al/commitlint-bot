@@ -2,22 +2,20 @@
 const expect = require('expect')
 
 // Mock necessary GitHub APIs here
-module.exports = data => {
-	const commits = data || [
-		{ commit: { message: 'fix: issue #1' } },
-		{ commit: { message: 'fix: issue #2' } },
-		{ commit: { message: 'fix: issue #3' } },
-		{ commit: { message: 'fix: issue #4' } }
-	]
+module.exports = (data = ['fix: issue #1']) => {
 	return {
 		repos: {
 			createStatus: expect.createSpy()
 		},
 		pullRequests: {
-			getCommits: expect.createSpy().andReturn(Promise.resolve({ commits }))
+			getCommits: expect.createSpy().andReturn({
+				data: data.map(e => {
+					return { commit: { message: e } }
+				})
+			})
 		},
-		paginate: (fn, callback) => {
-			callback(fn)
+		paginate: async (fn, callback) => {
+			callback(await fn)
 		}
 	}
 }
