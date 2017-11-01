@@ -5,19 +5,19 @@
 		"pull_request": {
 			"number": 1,
 			"user": {
-				"login": "ahmed-taj"
+				"login": "user"
 			},
 			"head": {
 				"sha": "123456789",
 				"user": {
-					"login": "ahmed-taj"
+					"login": "user"
 				}
 			}
 		},
 		"repository": {
-			"name": "test-commitlint-bot",
+			"name": "repo",
 			"owner": {
-				"login": "ahmed-taj"
+				"login": "user"
 			}
 		},
 		"installation": {
