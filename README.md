@@ -4,6 +4,10 @@
 
 # commitlint-bot
 
+[![Travis](https://img.shields.io/travis/ahmed-taj/commitlint-bot.svg)](https://travis-ci.org/ahmed-taj/commitlint-bot)
+[![npm](https://img.shields.io/npm/v/commitlint-bot.svg)](https://www.npmjs.com/package/commitlint-bot)
+
+
 <p align="center">
   <img src="docs/robot.svg" width="256" alt="commitlint-bot logo" />
 </p>
