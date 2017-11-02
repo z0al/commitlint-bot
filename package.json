@@ -1,6 +1,6 @@
 {
 	"name": "commitlint-bot",
-	"version": "0.0.0",
+	"version": "0.0.0-development",
 	"description": "A GitHub App that runs commitlint for you",
 	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com> (https://ahmed.sd)",
 	"license": "MIT",
@@ -11,7 +11,9 @@
 		"now": "now",
 		"now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY | base64 -d) npm start",
 		"start": "probot run ./index.js",
-		"test": "mocha"
+		"test": "mocha",
+		"semantic-release":
+			"semantic-release pre && npm publish && semantic-release post"
 	},
 	"dependencies": {
 		"@commitlint/core": "^4.2.2",
@@ -21,7 +23,8 @@
 		"expect": "^1.20.2",
 		"localtunnel": "^1.8.2",
 		"mocha": "^3.2.0",
-		"now": "^8.3.10"
+		"now": "^8.3.10",
+		"semantic-release": "^8.2.0"
 	},
 	"engines": {
 		"node": ">=8",
