@@ -67,6 +67,8 @@ npm install
 
 Robot designed by [Freepik](https://www.freepik.com/free-vector/fun-pack-of-robots-avatars_1258314.htm).
 
+Inspired by the awesome work of Tom Vincent in their [validate-commit-msg-bot](https://github.com/tlvince/validate-commit-msg-bot) package.
+
 ## Like it?
 
 Give it a star(:star:) :point_up_2:
