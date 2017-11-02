@@ -12,8 +12,7 @@ const baseStatus = {
 	sha: '123456789',
 	repo: 'repo',
 	owner: 'user',
-	context: 'commitlint-bot',
-	target_url: 'http://marionebl.github.io/commitlint/#/reference-rules'
+	context: 'commitlint-bot'
 }
 
 describe('commitlint-bot', () => {
