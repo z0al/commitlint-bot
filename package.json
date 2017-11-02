@@ -15,6 +15,7 @@
 		"semantic-release":
 			"semantic-release pre && npm publish && semantic-release post"
 	},
+	"files": ["lib", "index.js", "README.md"],
 	"dependencies": {
 		"@commitlint/core": "^4.2.2",
 		"probot": "^3.0.0"
