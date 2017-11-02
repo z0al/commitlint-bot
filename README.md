@@ -23,19 +23,23 @@ On the next pull request, a status check from `commitlint-bot` will appear:
 
 ![status-check-screenshot][]
 
+Problem details will be reported as a comment like this:
+
+![status-comment-screenshot][]
+
+
 For best results, enable branch protection (in the repository's settings) and require the `commitlint-bot` status check to pass before merging:
 
 ![branch-protection-screenshot][]
 
 [apps]: https://github.com/apps/commitlint-bot
 [status-check-screenshot]: docs/status.png
+[status-comment-screenshot]: docs/comment.png
 [branch-protection-screenshot]: docs/setting.png
 
-## Todo
+## What is missing?
 
-- [ ] Add tests
-- [ ] Support `.commitlintrc.json` and `.commitlintrc.yml` files
-- [ ] Add here ? open an [issue](https://github.com/ahmed-taj/commitlint-bot/issues/new)
+We don't currently support custom configuration (i.e. `.commitlint.yml` or `.commitlint.json`), but [we will]()
 
 ## Development
 
