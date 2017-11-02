@@ -5,7 +5,14 @@
 	"author": "Ahmed T. Ali <ah.tajelsir@gmail.com> (https://ahmed.sd)",
 	"license": "MIT",
 	"repository": "https://github.com/ahmed-taj/commitlint-bot.git",
-	"keywords": ["validate", "commit", "pr", "conventional", "git", "probot-app"],
+	"keywords": [
+		"validate",
+		"commit",
+		"pr",
+		"conventional",
+		"git",
+		"probot-app"
+	],
 	"scripts": {
 		"now": "now",
 		"now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY | base64 -d) npm start",
