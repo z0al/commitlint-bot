@@ -30,7 +30,7 @@ describe('commitlint-bot', () => {
 		robot.auth = () => Promise.resolve(github)
 	})
 
-	describe('updates status to pending', () => {
+	describe('status update to pending', () => {
 		const pending = {
 			...baseStatus,
 			state: 'pending',
@@ -48,7 +48,7 @@ describe('commitlint-bot', () => {
 		})
 	})
 
-	describe('gets the list of commits for PRs', () => {
+	describe('fetching the list of commits', () => {
 		const info = { repo: 'repo', owner: 'user', number: 1 }
 
 		it('works with new PRs', async () => {
@@ -61,4 +61,40 @@ describe('commitlint-bot', () => {
 			expect(github.pullRequests.getCommits).toHaveBeenCalledWith(info)
 		})
 	})
+
+	describe('no comment when no errors/warnings', () => {
+		it('works with new PRs', async () => {
+			github = githubMock(['fix: bug #1'])
+			robot.auth = () => Promise.resolve(github)
+
+			await robot.receive(events.opened)
+			expect(github.issues.createComment).toNotHaveBeenCalled()
+		})
+
+		it('works with updated PRs', async () => {
+			github = githubMock(['fix: bug #1'])
+			robot.auth = () => Promise.resolve(github)
+
+			await robot.receive(events.synchronize)
+			expect(github.issues.createComment).toNotHaveBeenCalled()
+		})
+	})
+
+	// describe('write comment on errors/warnings', () => {
+	// 	it('works with new PRs', async () => {
+	// 		github = githubMock(['fix: bug #1'])
+	// 		robot.auth = () => Promise.resolve(github)
+
+	// 		await robot.receive(events.opened)
+	// 		expect(github.issues.createComment).toHaveBeenCalled()
+	// 	})
+
+	// 	it('works with updated PRs', async () => {
+	// 		github = githubMock(['fix: bug #1'])
+	// 		robot.auth = () => Promise.resolve(github)
+
+	// 		await robot.receive(events.synchronize)
+	// 		expect(github.issues.createComment).toHaveBeenCalled()
+	// 	})
+	// })
 })
