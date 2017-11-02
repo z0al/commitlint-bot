@@ -13,7 +13,7 @@ const baseStatus = {
 	repo: 'repo',
 	owner: 'user',
 	context: 'commitlint-bot',
-	target_url: 'http://npm.im/@commitlint/config-angular#problems'
+	target_url: 'http://marionebl.github.io/commitlint/#/reference-rules'
 }
 
 describe('commitlint-bot', () => {
