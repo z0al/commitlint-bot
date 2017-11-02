@@ -43,7 +43,7 @@ For best results, enable branch protection (in the repository's settings) and re
 
 ## What is missing?
 
-We don't currently support custom configuration (i.e. `.commitlint.yml` or `.commitlint.json`), but [we will]()
+We don't currently support custom configuration (i.e. `.commitlint.yml` or `.commitlint.json`), but [we will](https://github.com/ahmed-taj/commitlint-bot/issues/1)
 
 ## Development
 
