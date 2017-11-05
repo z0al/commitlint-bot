@@ -12,7 +12,7 @@ const baseStatus = {
 	sha: '123456789',
 	repo: 'repo',
 	owner: 'user',
-	context: 'commitlint-bot'
+	context: 'commitlint'
 }
 
 describe('commitlint-bot', () => {

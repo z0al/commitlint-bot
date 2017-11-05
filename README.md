@@ -9,7 +9,7 @@
 
 
 <p align="center">
-  <img src="docs/robot.svg" width="256" alt="commitlint-bot logo" />
+  <img src="docs/robot.svg" width="256" alt="commitlint logo" />
 </p>
 
 > Built with [probot](https://github.com/probot/probot) framework
@@ -19,11 +19,11 @@ and sets an appropriate status check.
 
 ## Usage
 
-1. Browse to [GitHub Apps - commitlint-bot][apps]
+1. Browse to [GitHub Apps - commitlint][apps]
 2. Accept the permissions
 3. Allow access to repositories
 
-On the next pull request, a status check from `commitlint-bot` will appear:
+On the next pull request, a status check from `commitlint` will appear:
 
 ![status-check-screenshot][]
 
@@ -32,11 +32,11 @@ Problem details will be reported as a comment like this:
 ![status-comment-screenshot][]
 
 
-For best results, enable branch protection (in the repository's settings) and require the `commitlint-bot` status check to pass before merging:
+For best results, enable branch protection (in the repository's settings) and require the `commitlint` status check to pass before merging:
 
 ![branch-protection-screenshot][]
 
-[apps]: https://github.com/apps/commitlint-bot
+[apps]: https://github.com/apps/commitlint
 [status-check-screenshot]: docs/status.png
 [status-comment-screenshot]: docs/comment.png
 [branch-protection-screenshot]: docs/setting.png
