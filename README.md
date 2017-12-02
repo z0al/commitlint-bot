@@ -52,12 +52,15 @@ npm install
 ```
 
 2. Create your own [GitHub app][]
-3. Store the private key as `private-key.pem` in the repo
+3. Store the private key as `private-key.pem` somewhere safe, and point to its location in `.env`
 4. Start the app with `APP_ID=1234 npm start` where `1234` is your GitHub app's ID
 5. Update your GitHub app's Webhook URL to your localtunnel.me URL
 
 [GitHub app]: https://probot.github.io/docs/development/#configure-a-github-app
 
+## Deployment
+
+This app is deployed on free (and single) [Now](https://now.sh) instance which isn't not suitable for real-world usage, you may need to deploy your own instance of the app. See [docs/deploy.md](./docs/deploy.md) for more info.
 
 ## Credits
 
