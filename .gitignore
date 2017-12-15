@@ -58,3 +58,6 @@ typings/
 .env
 
 .vscode/launch.json
+
+# Git To-Dos 
+.todos.yml

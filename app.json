@@ -5,8 +5,7 @@
 	"repository": "https://github.com/ahmed-taj/commitlint-bot",
 	"env": {
 		"PRIVATE_KEY": {
-			"description":
-				"the private key of your GitHub App. It must be base64 encoded!"
+			"description": "the private key of your GitHub App."
 		},
 		"APP_ID": {
 			"description": "the ID of your GitHub App"
