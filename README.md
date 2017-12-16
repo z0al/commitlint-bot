@@ -1,5 +1,6 @@
 # commitlint [bot]
 
+
 [![Travis](https://img.shields.io/travis/ahmed-taj/commitlint-bot.svg)](https://travis-ci.org/ahmed-taj/commitlint-bot)
 [![npm](https://img.shields.io/npm/v/commitlint-bot.svg)](https://www.npmjs.com/package/commitlint-bot)
 
@@ -50,11 +51,16 @@ npm install
 ```
 
 2. Create your own [GitHub app][]
-3. Store the private key as `private-key.pem` in the repo
+3. Store the private key as `private-key.pem` somewhere safe, and point to its location in `.env`
 4. Start the app with `APP_ID=1234 npm start` where `1234` is your GitHub app's ID
 5. Update your GitHub app's Webhook URL to your localtunnel.me URL
 
-[github app]: https://probot.github.io/docs/development/#configure-a-github-app
+[GitHub app]: https://probot.github.io/docs/development/#configure-a-github-app
+
+## Deployment
+
+See [docs/deploy.md](./docs/deploy.md) for more info.
+
 
 ## Credits
 
