@@ -13,9 +13,3 @@ after_success:
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
-deploy:
-  script: scripts/deploy.sh
-  provider: script
-  skip_cleanup: true
-  on:
-    branch: master
