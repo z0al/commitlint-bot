@@ -1,8 +1,8 @@
-# commitlint-bot
+# commitlint [bot]
+
 
 [![Travis](https://img.shields.io/travis/ahmed-taj/commitlint-bot.svg)](https://travis-ci.org/ahmed-taj/commitlint-bot)
 [![npm](https://img.shields.io/npm/v/commitlint-bot.svg)](https://www.npmjs.com/package/commitlint-bot)
-
 
 <p align="center">
   <img src="docs/robot.svg" width="256" alt="commitlint logo" />
@@ -10,7 +10,7 @@
 
 > Built with [probot](https://github.com/probot/probot) framework
 
-A GitHub App that runs [commitlint](https://github.com/marionebl/commitlint) over all commits of new or edited pull requests
+A GitHub App that runs [commitlint](https://github.com/marionebl/commitlint) against all commits of new or edited pull requests
 and sets an appropriate status check.
 
 ## Usage
@@ -26,7 +26,6 @@ On the next pull request, a status check from `commitlint` will appear:
 Problem details will be reported as a comment like this:
 
 ![status-comment-screenshot][]
-
 
 For best results, enable branch protection (in the repository's settings) and require the `commitlint` status check to pass before merging:
 
@@ -60,7 +59,8 @@ npm install
 
 ## Deployment
 
-This app is deployed on free (and single) [Now](https://now.sh) instance which isn't not suitable for real-world usage, you may need to deploy your own instance of the app. See [docs/deploy.md](./docs/deploy.md) for more info.
+See [docs/deploy.md](./docs/deploy.md) for more info.
+
 
 ## Credits
 
