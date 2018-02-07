@@ -1,47 +1,36 @@
-// Packages
-const expect = require('expect')
-
 // Ours
 const format = require('../lib/format')
 
-const values = [
+const commits = [
 	// #1
-	{ commits: {} },
+	[
+		{
+			sha: 'abc',
+			errors: [],
+			warnings: [{ message: 'warning message' }]
+		}
+	],
+
 	// #2
-	{
-		commits: {
-			'1': { errors: [], warnings: [{ message: 'warning message' }] }
+	[
+		{
+			sha: 'def',
+			errors: [{ message: 'error message' }],
+			warnings: [{ message: 'warning message' }]
 		}
-	},
-	// #3
-	{
-		commits: {
-			'2': {
-				errors: [{ message: 'error message' }],
-				warnings: [{ message: 'warning message' }]
-			}
-		}
-	}
+	]
 ]
 
-test('generates summary', () => {
-	// #1
-	expect(format(values[0]).summary).toEqual('found 0 problems, 0 warnings')
-	// #2
-	expect(format(values[1]).summary).toEqual('found 0 problems, 1 warnings')
-	// #3
-	expect(format(values[2]).summary).toEqual('found 1 problems, 1 warnings')
+test('repalces placeholder', () => {
+	expect(format(commits[0])).not.toMatch(/PLACEHOLDER/)
 })
 
 test('generates comment body', () => {
 	// #1
-	expect(format(values[0]).message).toEqual('')
-
+	expect(format(commits[0])).toMatch(/Commit: abc/)
+	expect(format(commits[0])).toMatch(/warning message/)
 	// #2
-	expect(format(values[1]).message).toMatch(/Commit: 1/)
-	expect(format(values[1]).message).toMatch(/warning message/)
-	// #3
-	expect(format(values[2]).message).toMatch(/Commit: 2/)
-	expect(format(values[2]).message).toMatch(/error message/)
-	expect(format(values[2]).message).toMatch(/warning message/)
+	expect(format(commits[1])).toMatch(/Commit: def/)
+	expect(format(commits[1])).toMatch(/error message/)
+	expect(format(commits[1])).toMatch(/warning message/)
 })
