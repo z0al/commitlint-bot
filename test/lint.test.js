@@ -19,9 +19,14 @@ beforeEach(() => {
 		issues: { createComment: jest.fn() },
 		repos: { createStatus: jest.fn() },
 		pullRequests: {
-			getCommits: jest.fn().mockReturnValue({
-				data: [{ sha: 'abcd', commit: { message: 'bad message' } }]
-			})
+			getCommits: jest
+				.fn()
+				.mockReturnValueOnce({
+					data: [{ sha: 'abcd', commit: { message: 'good: message' } }]
+				})
+				.mockReturnValue({
+					data: [{ sha: 'abcd', commit: { message: 'bad message' } }]
+				})
 		},
 		paginate: (fn, cb) => cb(fn)
 	}
@@ -43,7 +48,12 @@ test('fetching the list of commits', async () => {
 	)
 })
 
-// test('comment with errors/warnings', async () => {
-// 	await robot.receive(events.opened)
-// 	expect(github.issues.createComment).toHaveBeenCalled()
-// })
+test('comment with errors/warnings', async () => {
+	// Good message
+	await robot.receive(events.opened)
+	expect(github.issues.createComment).not.toHaveBeenCalled()
+
+	// Bad message
+	await robot.receive(events.opened)
+	expect(github.issues.createComment).toHaveBeenCalled()
+})
