@@ -15,17 +15,17 @@
 	},
 	"files": ["lib", "index.js", "README.md"],
 	"dependencies": {
-		"@commitlint/core": "^4.2.2",
-		"probot": "^3.0.0"
+		"@commitlint/core": "^4.3.0",
+		"probot": "^5.0.0"
 	},
 	"devDependencies": {
 		"expect": "^1.20.2",
-		"localtunnel": "^1.8.2",
 		"mocha": "^3.2.0",
-		"semantic-release": "^8.2.0"
+		"semantic-release": "^8.2.0",
+		"smee-client": "^1.0.1"
 	},
 	"engines": {
-		"node": "8.9.x",
+		"node": "8.x",
 		"npm": "5.5.x"
 	}
 }
