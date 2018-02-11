@@ -1,5 +1,7 @@
 # commitlint [bot]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ahmed-taj/commitlint-bot.svg)](https://greenkeeper.io/)
+
 
 [![Travis](https://img.shields.io/travis/ahmed-taj/commitlint-bot.svg)](https://travis-ci.org/ahmed-taj/commitlint-bot)
 [![npm](https://img.shields.io/npm/v/commitlint-bot.svg)](https://www.npmjs.com/package/commitlint-bot)
