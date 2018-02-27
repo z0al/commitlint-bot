@@ -56,10 +56,10 @@ test('restores Context as Object using commit SHA', async () => {
 	const client = await createStore()
 	await client.save(ctx)
 
-	const sha = ctx.payload.pull_request.head.sha
-	const rec = await client.restore(sha)
+	const head = ctx.payload.pull_request.head.sha
+	const rec = await client.restore(head)
 
-	expect(sha).toEqual(rec.sha)
+	expect(head).toEqual(rec.head)
 	expect(installation_id).toEqual(rec.installation_id)
 	expect(ctx.issue()).toEqual(expect.objectContaining(rec.issue()))
 	expect(ctx.issue()).toEqual(expect.objectContaining(rec.repo()))
