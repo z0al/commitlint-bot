@@ -16,7 +16,8 @@
 	"files": ["lib", "index.js", "README.md"],
 	"dependencies": {
 		"@commitlint/core": "^4.3.0",
-		"probot": "^5.0.0"
+		"probot": "^5.0.0",
+		"redis": "^2.8.0"
 	},
 	"devDependencies": {
 		"jest": "^22.1.4",
