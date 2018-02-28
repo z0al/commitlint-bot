@@ -15,7 +15,7 @@
 	},
 	"files": ["lib", "index.js", "README.md"],
 	"dependencies": {
-		"@commitlint/core": "^4.3.0",
+		"@commitlint/lint": "^6.1.2",
 		"body-parser": "^1.18.2",
 		"joi": "^13.1.2",
 		"probot": "^5.0.0",

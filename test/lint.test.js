@@ -1,13 +1,16 @@
+jest.mock('../lib/store', () => ({
+	createStore: jest.fn().mockReturnValue({})
+}))
+
 // Packages
 const { createRobot } = require('probot')
 
 // Ours
 const app = require('../index')
-const events = require('./events')
 
-const repo = { owner: 'user', repo: 'repo' }
+const repo = { owner: 'user', repo: 'test' }
 
-let robot, github
+let robot, github, context
 
 beforeEach(() => {
 	// Here we create a robot instance
@@ -22,38 +25,52 @@ beforeEach(() => {
 			getCommits: jest
 				.fn()
 				.mockReturnValueOnce({
-					data: [{ sha: 'abcd', commit: { message: 'good: message' } }]
+					data: [{ sha: 'sha1', commit: { message: 'foo: message' } }]
 				})
 				.mockReturnValue({
-					data: [{ sha: 'abcd', commit: { message: 'bad message' } }]
+					data: [{ sha: 'sha2', commit: { message: 'bar: message' } }]
 				})
 		},
 		paginate: (fn, cb) => cb(fn)
 	}
 	// Passes the mocked out GitHub API into out robot instance
 	robot.auth = () => Promise.resolve(github)
-})
 
-test('status update to pending', async () => {
-	await robot.receive(events.opened)
-	expect(github.repos.createStatus).toHaveBeenCalledWith(
-		expect.objectContaining({ state: 'pending' })
-	)
+	context = {
+		event: 'commitlint',
+		payload: {
+			action: 'process',
+			pull_request: {
+				number: 1,
+				head: { sha: 'commit-sha' }
+			},
+			repository: {
+				name: 'test',
+				owner: { login: 'user' }
+			},
+			installation: { id: 111 },
+			config: {
+				rules: {}
+			}
+		}
+	}
 })
 
 test('fetching the list of commits', async () => {
-	await robot.receive(events.opened)
-	expect(github.pullRequests.getCommits).toHaveBeenCalledWith(
+	await robot.receive(context)
+	expect(github.pullRequests.getCommits).toBeCalledWith(
 		expect.objectContaining({ ...repo, number: 1 })
 	)
 })
 
 test('comment with errors/warnings', async () => {
+	context.payload.config.rules = { 'type-enum': [1, 'always', ['foo']] }
+
 	// Good message
-	await robot.receive(events.opened)
+	await robot.receive(context)
 	expect(github.issues.createComment).not.toHaveBeenCalled()
 
 	// Bad message
-	await robot.receive(events.opened)
-	expect(github.issues.createComment).toHaveBeenCalled()
+	await robot.receive(context)
+	expect(github.issues.createComment).toBeCalled()
 })
