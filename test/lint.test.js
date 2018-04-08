@@ -16,7 +16,8 @@ beforeEach(() => {
 	app(robot)
 	// Mock GitHub client
 	github = {
-		issues: { createComment: jest.fn() },
+		issues: { createComment: jest.fn(), editComment: jest.fn(),
+			getComments: jest.fn().mockReturnValue({ data:[ {  id: 1,user: { login: 'bot',  id: 2,  type: 'Bot', },} ] }) },
 		repos: { createStatus: jest.fn() },
 		pullRequests: {
 			getCommits: jest
