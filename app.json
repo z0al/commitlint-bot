@@ -1,17 +1,17 @@
 {
-	"name": "commitlint-bot",
-	"description": "A GitHub App that runs commitlint for you",
-	"keywords": ["validate", "commit", "pr", "conventional", "git", "probot-app"],
-	"repository": "https://github.com/ahmed-taj/commitlint-bot",
-	"env": {
-		"PRIVATE_KEY": {
-			"description": "the private key of your GitHub App."
-		},
-		"APP_ID": {
-			"description": "the ID of your GitHub App"
-		},
-		"WEBHOOK_SECRET": {
-			"description": "the secret configured for your GitHub App"
-		}
-	}
+  "name": "commitlint-bot",
+  "description": "A GitHub App that runs commitlint for you",
+  "keywords": ["validate", "commit", "pr", "conventional", "git", "probot-app"],
+  "repository": "https://github.com/z0al/commitlint-bot",
+  "env": {
+    "PRIVATE_KEY": {
+      "description": "the private key of your GitHub App."
+    },
+    "APP_ID": {
+      "description": "the ID of your GitHub App"
+    },
+    "WEBHOOK_SECRET": {
+      "description": "the secret configured for your GitHub App"
+    }
+  }
 }

@@ -1,7 +1,6 @@
 # commitlint [bot]
 
-
-[![Travis](https://img.shields.io/travis/ahmed-taj/commitlint-bot.svg)](https://travis-ci.org/ahmed-taj/commitlint-bot)
+[![Travis](https://img.shields.io/travis/z0al/commitlint-bot.svg)](https://travis-ci.org/z0al/commitlint-bot)
 [![npm](https://img.shields.io/npm/v/commitlint-bot.svg)](https://www.npmjs.com/package/commitlint-bot)
 
 <p align="center">
@@ -15,9 +14,9 @@ and sets an appropriate status check.
 
 ## Usage
 
-1. Browse to [GitHub Apps - commitlint][apps]
-2. Accept the permissions
-3. Allow access to repositories
+1.  Browse to [GitHub Apps - commitlint][apps]
+2.  Accept the permissions
+3.  Allow access to repositories
 
 On the next pull request, a status check from `commitlint` will appear:
 
@@ -38,29 +37,28 @@ For best results, enable branch protection (in the repository's settings) and re
 
 ## What is missing?
 
-We don't currently support custom configuration (i.e. `.commitlint.yml` or `.commitlint.json`), but [we will](https://github.com/ahmed-taj/commitlint-bot/issues/1)
+We don't currently support custom configuration (i.e. `.commitlint.yml` or `.commitlint.json`), but [we will](https://github.com/z0al/commitlint-bot/issues/1)
 
 ## Development
 
-1. Setup the repo:
+1.  Setup the repo:
 
 ```shell
-git clone https://github.com/ahmed-taj/commitlint-bot.git
+git clone https://github.com/z0al/commitlint-bot.git
 cd commitlint-bot
 npm install
 ```
 
-2. Create your own [GitHub app][]
-3. Store the private key as `private-key.pem` somewhere safe, and point to its location in `.env`
-4. Start the app with `APP_ID=1234 npm start` where `1234` is your GitHub app's ID
-5. Update your GitHub app's Webhook URL to your localtunnel.me URL
+2.  Create your own [GitHub app][]
+3.  Store the private key as `private-key.pem` somewhere safe, and point to its location in `.env`
+4.  Start the app with `APP_ID=1234 npm start` where `1234` is your GitHub app's ID
+5.  Update your GitHub app's Webhook URL to your localtunnel.me URL
 
-[GitHub app]: https://probot.github.io/docs/development/#configure-a-github-app
+[github app]: https://probot.github.io/docs/development/#configure-a-github-app
 
 ## Deployment
 
 See [docs/deploy.md](./docs/deploy.md) for more info.
-
 
 ## Credits
 
@@ -74,4 +72,4 @@ Give it a star(:star:) :point_up_2:
 
 ## License
 
-MIT © [Ahmed T. Ali](https://github.com/ahmed-taj)
+MIT © [Ahmed T. Ali](https://github.com/z0al)
