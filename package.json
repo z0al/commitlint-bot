@@ -1,5 +1,5 @@
 {
-  "name": "commitlint-bot",
+  "name": "probot-commitlint",
   "version": "0.0.0-development",
   "description": "A GitHub App that runs commitlint for you",
   "author": "Ahmed T. Ali <ah.tajelsir@gmail.com> (https://ahmed.sd)",
@@ -15,6 +15,7 @@
   ],
   "main": "index.js",
   "scripts": {
+    "now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY | base64 -d) npm start",
     "start": "probot run ./index.js",
     "test": "jest",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
